@@ -24,7 +24,9 @@ class AccountsBase(AbsObserver):
         if self.is_my_turn():
             if self.is_available():
                 self.sending_accounts.append(self.account_number)
+                self.pre_request()
                 self.send_request()
+                self.post_request()
                 self.sending_accounts.remove(self.account_number)
             else:
                 print("Error - account already in use!")

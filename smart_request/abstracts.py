@@ -35,6 +35,12 @@ class AbsObserver(metaclass=ABCMeta):
     def send_request(request):
         pass
 
+    def pre_request(request):
+        pass
+
+    def post_request(request):
+        pass
+
     def __enter__(self):
         return self
 
